@@ -15,6 +15,8 @@ def validate(pack_dir):
     errors = []
     if not data.get("id"):
         errors.append("id is required")
+    if not data.get("version"):
+        errors.append("version is required")
     if not isinstance(data.get("roles"), list) or not data.get("roles"):
         errors.append("roles[] is required")
     else:
@@ -29,10 +31,39 @@ def validate(pack_dir):
     return len(errors) == 0, errors
 
 
+def validate_all(root="packs"):
+    rootp = pathlib.Path(root)
+    if not rootp.exists():
+        print("packs directory missing")
+        return 1
+    failed = 0
+    total = 0
+    for d in sorted(rootp.iterdir()):
+        if not d.is_dir():
+            continue
+        total += 1
+        ok, errors = validate(d)
+        if ok:
+            print(f"VALID {d}")
+        else:
+            failed += 1
+            print(f"INVALID {d}")
+            for e in errors:
+                print("-", e)
+    print(f"Checked packs: {total}, failed: {failed}")
+    return 1 if failed else 0
+
+
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument("path", help="Path to role pack folder")
+    ap.add_argument("path", nargs="?", help="Path to role pack folder")
+    ap.add_argument("--all", action="store_true", help="Validate all packs/*")
     args=ap.parse_args()
+    if args.all:
+        sys.exit(validate_all())
+    if not args.path:
+        print("Provide a pack path or use --all")
+        sys.exit(2)
     ok, errors = validate(args.path)
     if ok:
         print("VALID")

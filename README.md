@@ -31,3 +31,12 @@ Scaffold released. Seeking contributors.
 ```bash
 python3 tools/validate_pack.py packs/startup-basic
 ```
+
+
+## Validate all packs
+```bash
+python3 tools/validate_pack.py --all
+```
+
+## Role-pack schema
+See `schemas/role-pack.schema.json`.
