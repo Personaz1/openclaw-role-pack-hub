@@ -40,3 +40,15 @@ python3 tools/validate_pack.py --all
 
 ## Role-pack schema
 See `schemas/role-pack.schema.json`.
+
+
+## Install
+```bash
+pip install -e .
+rolepackhub --all
+```
+
+## Tests
+```bash
+python3 -m pytest -q
+```
