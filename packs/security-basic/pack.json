@@ -1,0 +1,8 @@
+{
+  "id": "security-basic",
+  "version": "0.1.0",
+  "roles": [
+    {"name": "threat-modeler", "prompt_file": "roles/threat-modeler.md"},
+    {"name": "mitigation-planner", "prompt_file": "roles/mitigation-planner.md"}
+  ]
+}

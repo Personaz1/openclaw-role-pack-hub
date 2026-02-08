@@ -52,3 +52,10 @@ rolepackhub --all
 ```bash
 python3 -m pytest -q
 ```
+
+
+## End-to-end demo
+```bash
+bash demo/run_demo.sh
+```
+See generated artifacts in `demo/`.
