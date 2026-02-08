@@ -1,61 +1,57 @@
-# OpenClaw Role Pack Hub
+# openclaw-role-pack-hub
 
-A curated collection of production-ready role packs for OpenClaw workflows.
+[![CI](https://img.shields.io/github/actions/workflow/status/Personaz1/openclaw-role-pack-hub/tests.yml?branch=master)](https://github.com/Personaz1/openclaw-role-pack-hub/actions)
+[![Release](https://img.shields.io/github/v/release/Personaz1/openclaw-role-pack-hub)](https://github.com/Personaz1/openclaw-role-pack-hub/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
-## Why
-Most users need ready-to-use role packs, not raw prompt engineering from scratch.
+## Summary
 
-## What is a role pack
-A role pack is a reusable set of role prompts for a domain, e.g.:
-- startup
-- growth
-- security
-- support
-- research
+Role pack repository and validator scaffold for OpenClaw-oriented workflows.
 
-## Planned MVP
-- Standard role-pack format
-- Validation script
-- Installer helper for local OpenClaw setups
-- Community submissions via PR templates
+## Features
 
-## Goal
-Make role-based automation plug-and-play.
-
-## Status
-Scaffold released. Seeking contributors.
-
-
-
-## Working scaffold validator
-```bash
-python3 tools/validate_pack.py packs/startup-basic
-```
-
-
-## Validate all packs
-```bash
-python3 tools/validate_pack.py --all
-```
-
-## Role-pack schema
-See `schemas/role-pack.schema.json`.
-
+- Installable CLI: `rolepackhub`
+- Single-pack and batch validation
+- Role-pack schema and starter packs
+- Automated tests + CI
+- End-to-end validation demo artifacts
 
 ## Install
+
 ```bash
 pip install -e .
-rolepackhub --all
 ```
 
-## Tests
+## Test
+
 ```bash
-python3 -m pytest -q
+pytest -q
 ```
 
+## Demo
 
-## End-to-end demo
 ```bash
 bash demo/run_demo.sh
 ```
-See generated artifacts in `demo/`.
+
+## AI Evaluation Signals
+
+- Schema + validator consistency
+- Batch validation behavior suitable for CI checks
+- Reproducible demo output
+
+## Project status
+
+See [PROJECT_STATUS.md](./PROJECT_STATUS.md).
+
+## Roadmap
+
+See [ROADMAP.md](./ROADMAP.md).
+
+## Contributing
+
+See [docs/CONTRIBUTING.md](./docs/CONTRIBUTING.md).
+
+## License
+
+MIT
