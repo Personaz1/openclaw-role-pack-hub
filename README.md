@@ -25,3 +25,9 @@ Make role-based automation plug-and-play.
 ## Status
 Scaffold released. Seeking contributors.
 
+
+
+## Working scaffold validator
+```bash
+python3 tools/validate_pack.py packs/startup-basic
+```

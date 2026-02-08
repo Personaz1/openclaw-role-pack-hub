@@ -1,0 +1,8 @@
+{
+  "id": "startup-basic",
+  "version": "0.1.0",
+  "roles": [
+    {"name": "analyst", "prompt_file": "roles/analyst.md"},
+    {"name": "builder", "prompt_file": "roles/builder.md"}
+  ]
+}
